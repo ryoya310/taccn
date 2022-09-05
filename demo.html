@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<!-- Jquery必須 -->
+<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/GeneralFrame.min.css">
+
+<title>DEMO</title>
+<style>
+	body {
+		padding:0;
+		background:#fff;
+		max-width: 1800px;
+		margin: auto;
+	}
+	#demo {
+		margin: 0 0;
+	}
+	#demo > div{
+		display: flex;
+		margin: auto;
+	}
+	#demo > div > div{
+		width: 100%;
+	}
+	#demo > button {
+		margin-top: 8px;
+	}
+</style>
+</head>
+<body>
+
+	<!-- 基本これだけでいけるように↓ -->
+	<form id="demo" action="send.php" method="post" target="postframe" enctype="multipart/form-data">
+		<div>
+			<div id="tabs">
+				<ul>
+					<li><a id="view-tabs-1" href="#tabs-1">デフォルト</a></li>
+					<li><a id="view-tabs-2" href="#tabs-2">シンプル</a></li>
+					<li><a id="view-tabs-3" href="#tabs-3">複数</a></li>
+				</ul>
+				<div id="tabs-1">
+					<div id="Description"></div>
+				</div>
+				<div id="tabs-2">
+					<div id="Description2"></div>
+				</div>
+				<div id="tabs-3">
+					<div id="Description3"></div>
+				</div>
+			</div>
+		</div>
+		<button type="submit">送信</button>
+	</form>
+
+	<iframe name="postframe" id="postframe" style="display:none"></iframe>
+	<!-- Jquery必須 -->
+	<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+	<script type="text/javascript" src="/assets/js/GeneralFrame.js" defer></script>
+
+	<script type="text/javascript" src="jquery.taccn.js"></script>
+	<script>
+		jQuery(function($){
+
+			$("#tabs").tabs();
+
+			// /assets/js/taccn/demo.html
+			$("#Description").TACCN({
+				multi : false // true or false
+			});
+
+			$("#Description2").TACCN({
+				datas: "<p>test</p>",
+				toolbar1: ["image", "link", "unlink", "color", "backcolor", "bold", "italic", "underline", "strike", "fontsize"],
+				toolbar2: [],
+				toolbar3: [],
+				height: 100,
+				toolPos: "bottom",
+				tail: false,
+				multi : false // true or falsev
+			});
+
+			$("#Description3").TACCN({
+				datas: [
+					{Caption: "テキスト1", Description: "<p>テキスト1内容</p>", PageLink: 1, File: ""},
+				],
+				height: 200,
+				fileupload: true,
+				multi : true // true or false
+			});
+		});
+	</script>
+</body>
+</html>

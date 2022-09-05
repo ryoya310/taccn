@@ -1,0 +1,130 @@
+@use "../../../../css/config.scss";
+
+.colorSelector {
+	display: flex;
+	margin: 0.4em 0;
+
+	@include config.bp(mq-768) {
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.colors {
+		display: flex;
+		flex-wrap: wrap;
+		width: 315px;
+
+		@include config.bp(mq-768) {
+			display: none;
+		}
+
+		div {
+			width: 14%;
+			text-align: center;
+			margin-bottom: 0.4em;
+			span {
+				display: inline-block;
+				width: 35px;
+				height: 35px;
+				border-radius: 50%;
+				box-shadow:
+					1px 1px 1px #aaa,
+					1px 0px 1px #aaa,
+					0px 1px 1px #aaa,
+					0px 0px 1px #aaa,
+				;
+				cursor: pointer;
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+
+	.colorAlpha {
+		width: 120px;
+		height: auto;
+		margin-bottom: 1.6rem;
+
+		@include config.bp(mq-768) {
+			width: 100%;
+			margin-bottom: 2rem;
+		}
+
+		p {
+			width: 94%;
+			font-size: 1.5rem;
+			margin: 0 auto 1rem;
+		}
+		.sliderAlpha {
+			width: 90%;
+			text-align: center;
+			margin: auto;
+
+			@include config.bp(mq-768) {
+				height: 28px;
+			}
+		}
+		.ui-slider-handle {
+			cursor: pointer;
+			border:1px solid #888;
+
+			@include config.bp(mq-768) {
+				width: 30px;
+				height: 30px;
+			}
+		}
+	}
+
+	.colorSelect {
+		margin-bottom: 1em;
+
+		@include config.bp(mq-768) {
+			text-align: center;
+		}
+
+		input {
+			position: relative;
+			width: 94%;
+			border: 1px solid #eee;
+			text-align: center;
+			height: 30px;
+			border-radius: 0;
+
+			@include config.bp(mq-768) {
+				height: 40px;
+			}
+		}
+	}
+
+	.colorPreview {
+		position: relative;
+		width: 94%;
+		border: 1px solid #eee;
+		text-align: center;
+		height: 40px;
+		
+		@include config.bp(mq-768) {
+			display: none;
+		}
+
+		span {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: inline-block;
+			height: 20px;
+			line-height: 20px;
+			width: 80%;
+			text-align: center;
+			background: #ffff;
+		}
+	}
+
+	> div:last-child {
+		@include config.bp(mq-768) {
+			width: 100%;
+		}
+	}
+}

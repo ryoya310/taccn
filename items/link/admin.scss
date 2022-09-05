@@ -1,0 +1,20 @@
+#hc_link_editor {
+	width: 93%;
+	input {
+		width: 100%;
+	}
+	div.fBox {
+		display: flex;
+		input {
+			width: 100%;
+		}
+		button {
+			margin-left: 1em;
+			width: 60px;
+			background: #578DD5;
+			color: #fff;
+			border-radius: 0;
+			border: none;
+		}
+	}
+}

@@ -1,0 +1,84 @@
+.colorSelector {
+	display: flex;
+	margin: 0.4em 0;
+	.colors {
+
+		display: flex;
+		flex-wrap: wrap;
+		width: 315px;
+		div {
+			width: 14%;
+			text-align: center;
+			margin-bottom: 0.4em;
+			span {
+				display: inline-block;
+				width: 35px;
+				height: 35px;
+				border-radius: 50%;
+				box-shadow:
+					1px 1px 1px #aaa,
+					1px 0px 1px #aaa,
+					0px 1px 1px #aaa,
+					0px 0px 1px #aaa,
+				;
+				cursor: pointer;
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		}
+	}
+
+	.colorAlpha {
+
+		width: 120px;
+		height: 40px;
+		margin-bottom: 1em;
+		p {
+			margin-bottom: 0.5em;
+		}
+		.sliderAlpha {
+			width: 88%;
+			text-align: center;
+			margin: auto;
+		}
+		.ui-slider-handle {
+			cursor: pointer;
+			border:1px solid #888;
+		}
+	}
+
+	.colorSelect {
+
+		margin-bottom: 1em;
+
+		input {
+			position: relative;
+			width: 94%;
+			border: 1px solid #eee;
+			text-align: center;
+			height: 30px;
+		}
+	}
+
+	.colorPreview {
+
+		position: relative;
+		width: 94%;
+		border: 1px solid #eee;
+		text-align: center;
+		height: 40px;
+		span {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: inline-block;
+			height: 20px;
+			line-height: 20px;
+			width: 80%;
+			text-align: center;
+			background: #ffff;
+		}
+	}
+}

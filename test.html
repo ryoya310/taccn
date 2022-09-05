@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+<script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script defer>
+jQuery(function($){
+	$("body")[0].childNodes.forEach((dom) => {
+
+		var val;
+		var $row;
+		switch ($(dom).prop("nodeName")) {
+			case undefined:
+				val = $(dom)[0].nodeValue.replace(/\t|\r?\n/g, "");
+				val = (val == "") ? "<br>" : val;
+				$row = $("<p>").append(val);
+				break;
+			case "BR":
+				$row = $("<p>").append("<br>");
+				break;
+			case "HR":
+				$row = $("<div>").append("<hr>");
+				break;
+			default:
+				$row = $(dom);
+		}
+		$(dom).replaceWith($row);
+	});
+});
+</script>
+<title>DEMO</title>
+<!-- // https://model32.firstinc.jp/assets/js/taccn/test.html -->
+</head>
+<body>
+test
+<br>
+<p>aaaa</p>
+<div>b<span>qqqqq</span>bbb</div>
+<blockquote><p>aaaaaa</p>bbbb</blockquote>
+aaaaa
+<hr>
+www
+</body>
+</html>

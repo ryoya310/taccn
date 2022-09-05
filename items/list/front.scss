@@ -1,0 +1,11 @@
+.hc_list{
+	padding-left: 20px!important;
+	list-style: disc;
+	margin:0;
+	&.list_hiragana {
+		padding-left: 30px!important;
+	}
+	&.list_none {
+		padding-left: 0!important;
+	}
+}

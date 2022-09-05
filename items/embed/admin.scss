@@ -1,0 +1,23 @@
+#hc_embed_editor {
+
+	margin: 1em;
+	.conf {
+		margin-top: 0.4em;
+		margin-bottom: 0.4em;
+	}
+	.form {
+		display: flex;
+		justify-content: space-between;
+		div {
+			width: 48%;
+			textarea {
+				width: 100%;
+			}
+		}
+	}
+	.hc_preview {
+		padding: 0.4em;
+		height: 400px;
+		border: 1px solid #aaa;
+	}
+}
